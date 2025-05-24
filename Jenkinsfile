@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers{
+        pollSCM('*/1 * * *')
+    }
     stages {
         stage('build-api-test-image') {
             steps {
@@ -19,4 +22,3 @@ def builddockerImage(){
     echo "Pushing image to docker registry"
     sh "docker push betija/api-tests"
 }
-
