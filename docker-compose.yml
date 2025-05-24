@@ -1,7 +1,7 @@
 services:
   api-tests-dev:
     build: .
-    image: mtararujs/api-tests
+    image: betija/api-tests
     container_name: api-tests-dev
     volumes:
       - $PWD/test-reports/dev:/api-tests/mochawesome-report
@@ -10,7 +10,7 @@ services:
       - sample-book-app-network-compose
   api-tests-stg:
     build: .
-    image: mtararujs/api-tests
+    image: betija/api-tests
     container_name: api-tests-stg
     volumes:
       - $PWD/test-reports/stg:/api-tests/mochawesome-report
@@ -19,7 +19,7 @@ services:
       - sample-book-app-network-compose
   api-tests-prd:
     build: .
-    image: mtararujs/api-tests
+    image: betija/api-tests
     container_name: api-tests-prd
     volumes:
       - $PWD/test-reports/prd:/api-tests/mochawesome-report
